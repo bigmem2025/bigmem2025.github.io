@@ -5,63 +5,245 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The International Workshop on Big Memory (BigMem) 2025</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            line-height: 1.6;
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #3498db;
+            --text-color: #333;
+            --light-gray: #666;
+            --background-color: #ffffff;
         }
+        
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
         .header {
+            font-size: 32px;
+            font-weight: bold;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: var(--primary-color);
+        }
+
+        .subheader {
+            font-size: 20px;
+            color: var(--light-gray);
+            margin-bottom: 30px;
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        .content {
+            margin-bottom: 40px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .section-title {
             font-size: 24px;
             font-weight: bold;
-            /* border-bottom: 2px solid #333; */
-            padding-bottom: 10px;
+            margin-top: 35px;
             margin-bottom: 20px;
+            color: var(--primary-color);
+            padding-bottom: 8px;
+            border-bottom: 2px solid #eee;
         }
-        .content {
-            margin-bottom: 30px;
+
+        .main-topics {
+            list-style-type: disc;
+            padding-left: 25px;
+            margin-top: 20px;
         }
+
+        .main-topics li {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .main-topics li strong {
+            font-style: italic;
+            color: var(--secondary-color);
+        }
+
+        ul:not(.main-topics) {
+            list-style-type: circle;
+            padding-left: 25px;
+        }
+
+        ul:not(.main-topics) li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
         .person-group {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 6px;
         }
+
         .group-title {
             font-weight: bold;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
         }
+
         .person-list {
             padding-left: 20px;
         }
+
         .tbd {
             color: #999;
             font-style: italic;
         }
+
+        .important-dates {
+            list-style-type: disc;
+            padding-left: 25px;
+            margin: 20px 0;
+        }
+
+        .important-date {
+            margin-bottom: 12px;
+            color: var(--text-color);
+            line-height: 1.5;
+        }
+
+        .important-date::marker {
+            color: var(--accent-color);
+            font-size: 1.2em;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+
         @media (max-width: 600px) {
             body {
                 padding: 15px;
                 font-size: 14px;
             }
             .header {
+                font-size: 24px;
+            }
+            .subheader {
+                font-size: 16px;
+            }
+            .section-title {
                 font-size: 20px;
             }
-            .group-title {
-                font-size: 16px;
+            .main-topics li {
+                padding: 10px 15px;
             }
         }
     </style>
 </head>
 <body>
     <div class="header">The International Workshop on Big Memory (BigMem) 2025</div>
+    <div class="subheader">Co-located with the 31st ACM Symposium on Operating Systems Principles (<a href="https://sigops.org/s/conferences/sosp/2025/" target="_blank">SOSP 2025</a>)<br>Seoul, Republic of Korea, October 13, 2025</div>
     
     <div class="content">
+        <div class="section-title">Overview</div>
         <p>
-            The rapid evolution of memory-centric computing technologies—including Compute Express Link (CXL), persistent memory, and disaggregated architectures—is fundamentally reshaping system software design paradigms. The International Workshop on Big Memory (BigMem 2025) establishes a premier forum for researchers and practitioners to explore the challenges and opportunities in managing terabyte-to-petabyte scale memory hierarchies in modern computing systems.  
+            The rapid evolution of memory-centric computing technologies—including Compute Express Link (CXL), persistent memory, and disaggregated architectures—is fundamentally reshaping system software design paradigms. The International Workshop on Big Memory (BigMem 2025) establishes a premier forum for researchers and practitioners to explore the challenges and opportunities in managing terabyte-to-petabyte scale memory hierarchies in modern computing systems.        
+        </p>
+        <p>Our focuses include:</p>
+        <ul class="main-topics">
+            <li><strong>OS & Memory Hierarchy Redesign:</strong> Traditional OS abstractions, such as virtual memory and caching, are challenged by heterogeneous memory technologies and disaggregated architectures.</li>
+            <li><strong>Distributed Memory & Networking:</strong> Memory-centric networking technologies, such as RDMA and CXL.mem, blur the line between local and remote memory, necessitating new consistency models and failure handling mechanisms.</li>
+            <li><strong>Applications & Workloads:</strong> Big-memory applications, such as machine learning, graph processing, and in-memory databases, reveal performance bottlenecks in current OS and architecture designs.</li>
+        </ul>
+        <p>
+            BigMem 2025 aims to foster cross-disciplinary collaboration between operating system researchers, computer architects, and industry practitioners. By bringing together diverse perspectives, we seek to accelerate innovation in big memory systems and establish this workshop as the leading venue for memory-centric computing research.
         </p>
         <p>
-            This workshop will focus on three critical research directions: 1) Operating system support for heterogeneous memory systems integrating DRAM, CXL and/or persistent memory; 2) Memory-centric networking technologies enabling efficient remote memory access; and 3) Innovative applications leveraging massive memory capacities. Moreover, we will examine emerging challenges in memory virtualization, coherence protocols, fault tolerance for next-generation memory architectures. The workshop program will feature keynote presentations from leading experts in academia and/or industry, technical papers, and panel discussions.
+            BigMem 2025 will be co-located with SOSP 2025 and registrations will be handled by SOSP 2025.
         </p>
-        <p>BigMem 2025 aims to foster cross-disciplinary collaboration between operating system researchers, computer architects, and industry practitioners. By bringing together diverse perspectives, we seek to accelerate innovation in big memory systems and establish this workshop as the leading venue for memory-centric computing research.
+
+        <div class="section-title">Topics of Interest</div>
+        <p>
+            This workshop will focus on important research directions, including operating system support for heterogeneous memory systems integrating DRAM, CXL and/or persistent memory, memory-centric networking technologies enabling efficient remote memory access, and innovative applications leveraging massive memory capacities. Moreover, we will examine emerging challenges in memory virtualization, coherence protocols, and fault tolerance for next-generation memory architectures.
         </p>
+        <p>The topics include, but are not limited to:</p>
+
+        <strong>Memory Architecture & Systems</strong>
+        <ul>
+            <li>Memory-system design (hardware/software co-optimization)</li>
+            <li>Disaggregated memory architectures (e.g., CXL, NVMe-over-Fabrics)</li>
+            <li>Operating systems for hybrid/heterogeneous memory (NVM, DRAM, HBM)</li>
+            <li>Design and operation of large-scale memory systems</li>
+        </ul>
+
+        <strong>Memory Technologies & Reliability</strong>
+        <ul>
+            <li>Emerging memory technologies (3D XPoint, STT-MRAM, FeRAM, optical memory)</li>
+            <li>Memory failure modes, reliability, and fault mitigation</li>
+            <li>Energy-efficient memory subsystems</li>
+        </ul>
+
+        <strong>Security & Safety</strong>
+        <ul>
+            <li>Memory security (side-channel attacks, encryption, secure allocators)</li>
+            <li>Memory safety for critical systems</li>
+        </ul>
+
+        <strong>Programming & Performance</strong>
+        <ul>
+            <li>Memory-centric programming models and languages</li>
+            <li>In-memory and near-memory computing architectures</li>
+            <li>Algorithmic memory optimizations (caching, prefetching, compression)</li>
+            <li>Non-volatile memory programming paradigms</li>
+        </ul>
+
+        <strong>Applications & Storage</strong>
+        <ul>
+            <li>In-memory databases, NoSQL stores, and analytics</li>
+            <li>Memory-driven AI/ML workloads</li>
+            <li>Embedded and autonomous systems</li>
+        </ul>
+
+        <strong>Emerging Directions</strong>
+        <ul>
+            <li>Memory disaggregation for cloud/edge environments</li>
+            <li>Quantum memory interfaces and hybrid classical-quantum systems</li>
+            <li>Bio-inspired memory architectures</li>
+        </ul>
+
+        <p>By bridging architecture, systems, and applications, BigMem 2025 seeks to shape future research directions in operating systems.
+        </p>
+
+        <div class="section-title">Submission Guidelines</div>
+        <p>
+            We invite original research contributions that have not been published previously or submitted concurrently to other venues, including any other conference or journal. Authors should prepare their work as a two-page extended abstract (references excluded) in English, formatted as a PDF document. The <a href="https://www.sigplan.org/Resources/Author/" target="_blank">ACM submission template</a> is recommended.
+        </p>
+        <p>
+            All submissions must be made through the workshop's online submission system and will undergo a double-blind review process by our program committee. Please ensure your submission is properly anonymized to maintain the integrity of the review. Submissions will be evaluated on their technical merit, novelty, relevance to the workshop themes, and clarity of presentation. This workshop focuses on discussion and feedback rather than archival publication, and therefore does not produce formal proceedings.
+        </p>
+        <p>Submission site: <span class="tbd">TBD</span></p>
+
+        <div class="section-title">Important Dates</div>
+        <ul class="important-dates">
+            <li class="important-date">Submissions due: July 30, 2025 (AOE)</li>
+            <li class="important-date">Notification of acceptance: August 30, 2025</li>
+            <li class="important-date">Workshop presentation: October 13, 2025</li>
+        </ul>
     </div>
     
     <div class="person-group">
@@ -78,17 +260,18 @@
             <div class="tbd">TBD</div>
         </div>
     </div>
+    
+    <div class="person-group">
+        <div class="group-title">Web/Submission Chair:</div>
+        <div class="person-list">
+            <div>Yuxuan Mo, Huazhong University of Science and Technology</div>
+        </div>
+    </div>   
 
     <div class="person-group">
         <div class="group-title">Program Committee Member:</div>
         <div class="person-list">
             <div class="tbd">TBD</div>
-        </div>
-    </div>   
-    <div class="person-group">
-        <div class="group-title">Web/Submission Chair:</div>
-        <div class="person-list">
-            <div>Yuxuan Mo, Huazhong University of Science and Technology</div>
         </div>
     </div>   
 </body>
